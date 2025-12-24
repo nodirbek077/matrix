@@ -11,7 +11,7 @@
  * 111
  * 222
  */
-public final class Exercise28 {
+public class Exercise28 {
     public static void main(String[] args) {
 
     }
