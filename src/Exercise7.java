@@ -45,11 +45,11 @@ public class Exercise7 {
 
         System.out.println();
 
+        //k = 1, a[[0, 0], [1, 0]]
         int[] kRows = new int[m];
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < m; i++) {
             for (int j = 0; j < k; j++) {
                 kRows[i] = matrix[i][j];
-//                System.out.print(matrix[0][j] + "\t");
             }
         }
 
