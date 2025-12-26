@@ -15,6 +15,7 @@ public class Exercise14 {
         int n = input.nextInt();
 
         //1. insert elements to matrix
+        System.out.print("Enter the elements of the array: ");
         int[][] matrix = new int[m][n];
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
@@ -32,15 +33,18 @@ public class Exercise14 {
 
         System.out.println();
 
-        int[] sumsI = new int[n];
-        for (int i = 0; i < n; i++) {
-            int sumI = 0;
-            for (int j = 0; j < m; j++) {
-                sumI += matrix[i][j];
-                sumsI[j] = sumI;
+        int[] sumsColumns = new int[n];
+        int sumColumn = 0;
+        for (int i = 0; i < m - 1; i++) {
+            for (int j = 0; j < n; j++) {
+                sumColumn += matrix[i][j];
+                sumsColumns[j] = sumColumn;
+                sumColumn = 0;
+                i++;
             }
+            break;
         }
-        System.out.println("Every rows sums as array: " + Arrays.toString(sumsI));
+        System.out.println("Every rows sums as array: " + Arrays.toString(sumsColumns));
 
         /*//3. find min element from the smallest sums of rows
         int min = sumsI[0];

@@ -40,7 +40,7 @@ public class Exercise13 {
                 sumsI[i] = sumI;
             }
         }
-        System.out.println("Every rows sums as array: " +Arrays.toString(sumsI));
+        System.out.println("Every rows sums as array: " + Arrays.toString(sumsI));
 
         //3. find min element from the smallest sums of rows
         int min = sumsI[0];
