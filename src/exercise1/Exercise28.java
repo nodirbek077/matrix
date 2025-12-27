@@ -1,5 +1,7 @@
+package exercise1;
 /**
- * 28. m x n o'lchamli matritsa berilgan (m juft son). Matritsaning teng yarmidan yuqorisi va pastini almashtiruvchi programma tuzilsin.
+ * 28. m x n o'lchamli matritsa berilgan (m juft son). Matritsaning teng yarmidan
+ * yuqorisi va pastini almashtiruvchi programma tuzilsin.
  * Matritsa
  * 111
  * 222

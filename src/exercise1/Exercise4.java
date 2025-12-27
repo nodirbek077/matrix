@@ -1,13 +1,13 @@
+package exercise1;
+
 import java.util.Scanner;
 
 /**
- * 1. m va n butun musbat sonlari berilgan.
+ * 4. m va n butun musbat sonlari va n ta butun sonlar to'plami berilgan.
  * m x n o'lchamli matritsani shunday hosil qilingki,
- * uning har biri - satri elementlari 10 * i ga teng bo'lsin. (i =0, 1, ..., m - 1)
- * Qator yoki satr: i
- * Ustun: j
+ * uning har bir satri kiritilgan n ta sondan iborat bo'lsin.
  */
-public class Exercise1 {
+public class Exercise4 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter the number m: ");
@@ -24,6 +24,13 @@ public class Exercise1 {
             }
         }
 
+        int[] numsN = new int[n];
+        System.out.println("Enter " + n + " element(s).");
+        for (int i = 0; i < n; i++) {
+            System.out.print("Enter " + i + " - element: ");
+            numsN[i] = input.nextInt();
+        }
+
         System.out.println("The matrix after entering: ");
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
@@ -32,12 +39,18 @@ public class Exercise1 {
             System.out.println();
         }
 
+        System.out.println("Elements that you entered are: ");
+        for (int i = 0; i < n; i++) {
+            System.out.print(numsN[i] + " ");
+        }
+
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
-                matrix[i][j] = 10 * i;
+                matrix[i][j] = numsN[j];
             }
         }
 
+        System.out.println();
         System.out.println("The matrix after changing: ");
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {

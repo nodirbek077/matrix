@@ -1,11 +1,13 @@
+package exercise1;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
 /**
- * 10. m x n o'lchamli matritsa va k soni berilgan (0 <= k < n ).
- * Matritsaning k- ustuni elementlari yig'indisini va ko'paytmasini chiqaruvchi programma tuzilsin.
+ * 9. m x n o'lchamli matritsa va k soni berilgan (0 <= k < m ).
+ * Matritsaning k – satri elementlari yig'indisini va ko'paytmasini chiqaruvchi programma tuzilsin.
  */
-public class Exercise10 {
+public class Exercise9 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.print("m (rows): ");
@@ -14,7 +16,7 @@ public class Exercise10 {
         System.out.print("n (columns): ");
         int n = input.nextInt();
 
-        System.out.print("k (0 <= k < n): ");
+        System.out.print("k (0 <= k < m): ");
         int k = input.nextInt();
 
         if (k < 0) {
@@ -22,8 +24,8 @@ public class Exercise10 {
             return;
         }
 
-        if (k >= n) {
-            System.out.print("k must be less than n");
+        if (k >= m) {
+            System.out.print("k must be less than m");
             return;
         }
 
@@ -45,11 +47,10 @@ public class Exercise10 {
 
         System.out.println();
 
-        //k = 1, a[[0, 0], [1, 0]]
-        int[] kRows = new int[m];
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < k; j++) {
-                kRows[i] = matrix[i][j];
+        int[] kRows = new int[n];
+        for (int i = 0; i < k; i++) {
+            for (int j = 0; j < n; j++) {
+                kRows[j] = matrix[i][j];
             }
         }
 

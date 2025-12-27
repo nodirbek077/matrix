@@ -1,11 +1,13 @@
+package exercise1;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
 /**
- * 7. m x n o'lchamli matritsa va k soni berilgan (0 <= k < n ).
- * Matritsaning k- ustuni elementlarini chiqaruvchi programma tuzilsin.
+ * 12. m x n o'lchamli matritsa berilgan.
+ * Matritsa har bir ustunining eng katta elementini chiqaruvchi programma tuzilsin.
  */
-public class Exercise7 {
+public class Exercise12 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.print("m (rows): ");
@@ -13,19 +15,6 @@ public class Exercise7 {
 
         System.out.print("n (columns): ");
         int n = input.nextInt();
-
-        System.out.print("k (0 <= k < n): ");
-        int k = input.nextInt();
-
-        if (k < 0) {
-            System.out.print("k must be equal or greater than zero");
-            return;
-        }
-
-        if (k >= n) {
-            System.out.print("k must be less than n");
-            return;
-        }
 
         //1. insert elements to matrix
         int[][] matrix = new int[m][n];
@@ -35,7 +24,7 @@ public class Exercise7 {
             }
         }
 
-        //2. get k-elements from this matrix
+        //2. get all elements from this matrix
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 System.out.print(matrix[i][j] + "\t");
@@ -45,15 +34,16 @@ public class Exercise7 {
 
         System.out.println();
 
-        //k = 1, a[[0, 0], [1, 0]]
-        int[] kRows = new int[m];
+        int[] maxJs = new int[n];
         for (int i = 0; i < m; i++) {
-            for (int j = 0; j < k; j++) {
-                kRows[i] = matrix[i][j];
+            for (int j = 0; j < n; j++) {
+                int maxJ = matrix[0][j];
+                if (matrix[i][j] > maxJ) {
+                    maxJ = matrix[i][j];
+                    maxJs[j] = maxJ;
+                }
             }
         }
-
-        System.out.println(Arrays.toString(kRows));
-
+        System.out.println(Arrays.toString(maxJs));
     }
 }

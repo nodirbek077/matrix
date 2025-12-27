@@ -1,4 +1,5 @@
-import java.util.Arrays;
+package exercise1;
+
 import java.util.Scanner;
 
 /**

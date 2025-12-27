@@ -1,12 +1,13 @@
+package exercise1;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
 /**
- * 8. m x n o'lchamli matritsa berilgan.
- * Matritsaning 2 ga karrali (0, 2, 4, ... ) satrlarini chiqaruvchi programma tuzilsin.
- * Shart operatori ishlatilmasin.
+ * 7. m x n o'lchamli matritsa va k soni berilgan (0 <= k < n ).
+ * Matritsaning k- ustuni elementlarini chiqaruvchi programma tuzilsin.
  */
-public class Exercise8 {
+public class Exercise7 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.print("m (rows): ");
@@ -14,6 +15,19 @@ public class Exercise8 {
 
         System.out.print("n (columns): ");
         int n = input.nextInt();
+
+        System.out.print("k (0 <= k < n): ");
+        int k = input.nextInt();
+
+        if (k < 0) {
+            System.out.print("k must be equal or greater than zero");
+            return;
+        }
+
+        if (k >= n) {
+            System.out.print("k must be less than n");
+            return;
+        }
 
         //1. insert elements to matrix
         int[][] matrix = new int[m][n];
@@ -23,7 +37,7 @@ public class Exercise8 {
             }
         }
 
-        //2. get all elements from this matrix
+        //2. get k-elements from this matrix
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 System.out.print(matrix[i][j] + "\t");
@@ -33,11 +47,15 @@ public class Exercise8 {
 
         System.out.println();
 
-        for (int i = 0; i < m; i += 2) {
-            for (int j = 0; j < n; j++) {
-                System.out.print(matrix[i][j] + "\t");
+        //k = 1, a[[0, 0], [1, 0]]
+        int[] kRows = new int[m];
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < k; j++) {
+                kRows[i] = matrix[i][j];
             }
-            System.out.println();
         }
+
+        System.out.println(Arrays.toString(kRows));
+
     }
 }
