@@ -2,8 +2,6 @@ package exercise1;
 
 import util.ArrayUtil;
 
-import java.util.Arrays;
-
 /**
  * 24. m x n o'lchamli matritsa berilgan.
  * O'zi turgan satrda eng kattasi va o'zi turgan ustunda eng kichigi bo'lsan elementni aniqlovchi programma tuzilsin.

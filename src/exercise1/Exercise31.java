@@ -12,17 +12,26 @@ public class Exercise31 {
         int[][] matrix = ArrayUtil.getArrayElements();
         int rows = matrix.length;
         int cols = matrix[0].length;
+
+        if (rows != cols){
+            System.out.println("Rows and Cols must be equal!");
+            return;
+        }
+
         System.out.println();
         for (int i = 0; i < rows / 2; i++) {
-            for (int j = 0; j < cols - 1; j++) {
+            for (int j = 0; j < cols; j++) {
+                int temp = matrix[i][j];
                 matrix[i][j] = matrix[rows - 1 - i][cols - 1 - j];
-//                matrix[i+rows/2][]
+                matrix[rows - 1 - i][cols - 1 - j] = temp;
             }
         }
 
-        for (int i = 0; i < rows; i++) {
+        System.out.println();
+
+        for (int[] ints : matrix) {
             for (int j = 0; j < cols; j++) {
-                System.out.print(matrix[i][j] + "\t");
+                System.out.print(ints[j] + "\t");
             }
             System.out.println();
         }
